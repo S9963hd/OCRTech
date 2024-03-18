@@ -56,8 +56,15 @@ public class Ocr extends HttpServlet {
                         + "</html>");
             } catch (TesseractException | IOException e) {
                 // Handle OCR or IO errors
-                res.getWriter().println("<h2>Error:</h2>");
-                res.getWriter().println("<pre>" + e.getMessage() + "</pre>");
+                res.getWriter().println("<head>"
+                		+ "<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65\" crossorigin=\"anonymous\">"
+                		+ "</head>"
+                		+ "<body class=\"container-fluid\" style=\"background-color:beige\">");
+                res.getWriter().println("<div class=\"row justify-content-center align-items-center \">"
+                		+ "<div class=\"col-10\">"
+                		+ "	The Image May Doesn't Contains Any Text inside Try Again please"
+                		+ "</div>"
+                		+ "</body>");
             }
         } else {
             // Handle missing filePart

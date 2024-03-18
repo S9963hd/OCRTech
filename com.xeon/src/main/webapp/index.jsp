@@ -28,7 +28,7 @@
         <form action="ocr" method="post" class="col-8 bg-danger p-5 rounded-2" enctype="multipart/form-data" >
             <div class="col-12 input-group">
                 <label for="imgFile" class="input-group-text">Choose Image File</label>
-                <input type="file" class="form-control" id="file" name="file" required/>
+                <input type="file" class="form-control" id="file" name="file" accept=".png,.jpg,.jpeg" required/>
                 <button type="reset" class="btn btn-danger input-group-text"><i class="fas fa-trash" ></i></button>
             </div>
             <button type="submit" class="btn btn-success d-flex mx-auto mt-3 text-center">Convert</button>
