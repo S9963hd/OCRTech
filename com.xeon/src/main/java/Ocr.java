@@ -30,7 +30,7 @@ public class Ocr extends HttpServlet {
                 // Read the input stream into a BufferedImage
                 InputStream fileInputStream = filePart.getInputStream();
                 BufferedImage bufferedImage = ImageIO.read(fileInputStream);
-
+                tesseract.setLanguage("eng+tam");
                 // Perform OCR on the BufferedImage
                 String result = tesseract.doOCR(bufferedImage);
 
@@ -62,7 +62,7 @@ public class Ocr extends HttpServlet {
                 		+ "<body class=\"container-fluid\" style=\"background-color:beige\">");
                 res.getWriter().println("<div class=\"row justify-content-center align-items-center \">"
                 		+ "<div class=\"col-10\">"
-                		+ "	The Image May Doesn't Contains Any Text inside Try Again please"
+                		+ "	The Image May Doesn't Contains Any Text Or enough quality to manipulate inside Try Again please"
                 		+ "</div>"
                 		+ "</body>");
             }
